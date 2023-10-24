@@ -1,0 +1,108 @@
+header{
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 8vw;
+    padding: 20px 0px 10px 0px;
+    color: #304529;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 120%;
+    margin: 0px 10px;
+}
+
+body h2{
+    font-size: 110%;
+    text-align: center;
+    margin: 10px 0px;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    color: #304529;
+}
+
+body h3{
+    background-color: #bcd4bd;
+    border: solid #bcd4bd 4px;
+    font-size: 110%;
+    margin: 10px 0px;
+}
+
+body h4{
+    background-color: beige;
+    border: solid beige 4px;
+    margin: 10px 0px;
+}
+
+nav ul{
+    color: black;
+    display: grid;
+    grid: 35px / auto auto auto auto auto;
+    align-items: center;
+    background-color: #cdd491;
+}
+
+nav ul > li{
+    text-align: center;
+}
+
+nav ul li a.in_use{
+    font-weight: 700;
+}
+
+img, video{
+    margin-top: 10px;
+}
+
+main ul{
+    margin-left: 20px;
+    list-style-type: circle;
+}
+
+main ol{
+    margin-left: 20px;
+    list-style-type: decimal;
+}
+
+section a{
+    text-decoration: underline;
+}
+
+nav h2{
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example{
+    from {color: #717533;}
+    to {color: #304529;}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    nav h2 {animation: none;}
+    img[src*="gif"] {display: none;}
+}
+
+a.skip-to-content-link{
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 0.5em;
+    background-color: beige;
+    color: black;
+    opacity: 0;
+    width: 150px;
+}
+
+a.skip-to-content-link:focus{
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+}
+
+*:focus{
+    outline: #304529 solid 3px;
+}
+
+/*Common project starter code used with permission from Dr. van Lent: https://github.com/GodHook/starter_html*/
