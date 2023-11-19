@@ -38,7 +38,7 @@ body h4{
 nav ul{
     color: black;
     display: grid;
-    grid: 35px / auto auto auto auto auto;
+    grid: 35px / auto auto auto;
     align-items: center;
     background-color: #cdd491;
 }
@@ -49,6 +49,7 @@ nav ul > li{
 
 nav ul li a.in_use{
     font-weight: 700;
+    text-decoration: underline;
 }
 
 img, video{
@@ -74,10 +75,9 @@ nav h2{
     animation-duration: 4s;
 }
 
-@keyframes example{
-    from {color: #717533;}
-    to {color: #304529;}
-}
+@keyframes example {
+    70% {font-size: 30px;}
+ }
 
 @media (prefers-reduced-motion: reduce) {
     nav h2 {animation: none;}
@@ -104,5 +104,95 @@ a.skip-to-content-link:focus{
 *:focus{
     outline: #304529 solid 3px;
 }
+
+.pet_photo_gallery, .travel_photo_gallery{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, vw);
+    grid-gap: 15px;
+}
+
+.pet_intro, .intro_location_images{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, vw);
+    grid-gap: 15px;
+}
+
+/* Tablet view */
+@media only screen and (min-width: 768px) {
+    .pet_photo_gallery, .travel_photo_gallery, .pet_intro, .intro_location_images{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header{
+        font-size: 4vw;
+        float: left;
+        display: inline;
+        width: 49%;
+    }
+
+    nav ul{
+        padding: 20px 0px 10px 0px;
+        background-color: white;
+    }
+
+    nav ul > li{
+        border: solid #cdd491 5px;
+        background-color: #cdd491;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 110px;
+    }
+
+    hr{
+        border: solid #304529;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .recipe_image{
+        float: right;
+        margin-top: -90px;
+        border: solid #304529 3px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+    }
+
+    .recipe_divider{
+        width: 40%;
+    }
+
+    .pet_intro > p {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .pet_intro {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+    }
+
+    .invisible_hr{
+        border-color: white;
+    }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 992px) {
+    .pet_photo_gallery{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .travel_photo_gallery{
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    body{
+        background-color: gray;
+    }
+    
+}
+
 
 /*Common project starter code used with permission from Dr. van Lent: https://github.com/GodHook/starter_html*/
