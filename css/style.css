@@ -119,6 +119,46 @@ a.skip-to-content-link:focus{
     grid-gap: 15px;
 }
 
+form {
+    background-color: white;
+    width: 300px;
+    height: 44px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  ::placeholder {
+    color: #304529;
+    opacity: 0.7; 
+  }
+
+  input {
+    all: unset;
+    font: 16px system-ui;
+    color: #304529;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+  }
+
+  button {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+  }
+  
+  svg {
+    color: #304529;
+    fill: currentColor;
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+  }
+
+
 /* Tablet view */
 @media only screen and (min-width: 768px) {
     .pet_photo_gallery, .travel_photo_gallery, .pet_intro, .intro_location_images{
@@ -188,10 +228,23 @@ a.skip-to-content-link:focus{
         grid-template-columns: repeat(5, 1fr);
     }
 
-    body{
-        background-color: gray;
+    hr{
+        border-color: white;
+    }
+
+    header {
+        font-size: 40px;
+        background-color: #cdd491;
     }
     
+    nav ul {
+        border-bottom: solid #cdd491 8.5px;
+        background-color: #cdd491;
+    }
+
+    body{
+        background-image: url("../images/background_image.jpeg");
+    }
 }
 
 
