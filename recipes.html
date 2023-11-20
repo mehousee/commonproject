@@ -24,14 +24,26 @@
             <li><a href="pets.html">Pets</a></li>
             <li><a class="in_use" href="recipes.html">Recipes</a></li>
         </ul>
-        <hr>
+
+        <form id="form" role="search">
+            <input type="search" id="query" name="q"
+             placeholder="Search..."
+             aria-label="Search through site content">
+            <button aria-label="Search">
+                <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+            </button>
+        </form>
+
+        <div class="rectangle"></div>
+        <hr class="top">
+
         <h2>Recipes</h2>
     </nav>
    
     <main id="main">
     <section>
         <h3>Chocolate Cookies</h3>
-        <ul>
+        <ul class="pet_p">
             <li>Origin: Michigan</li>
             <li>Source: Family Recipe</li>
             <li>Category: Dessert</li>
@@ -40,7 +52,7 @@
 
         <img class = recipe_image src="images/double_chocolate_cookies.png" width = "400" alt="chocolate cookies surrounded by chocolate chips">
 
-        <p>My daughter learned to make these cookies at a baking camp at Zingerman's and has tweaked the recipe to fit the taste buds of her siblings.  They are extremely sweet so the salt helps to balance it. Note, these cookies are best eaten very quickly.</p>
+        <p class="pet_p">My daughter learned to make these cookies at a baking camp at Zingerman's and has tweaked the recipe to fit the taste buds of her siblings.  They are extremely sweet so the salt helps to balance it. Note, these cookies are best eaten very quickly.</p>
 
         <h4 class="recipe_divider">Recipe Ingredients</h4>
         <ul>
@@ -73,7 +85,7 @@
 
     <section>
         <h3>Crunchwrap Supreme Recipe</h3>
-        <ul>
+        <ul class="pet_p">
             <li>Origin: Fake Mexican</li>
             <li>Source: Tacobell Website</li>
             <li>Category: Comfort Food</li>
@@ -82,7 +94,7 @@
         
         <img class = recipe_image src="images/tacobell_beef.jpg" width = "400" alt="Crunchwrap Supreme sitting on Tacobell wrapper">
 
-        <p>Despite the noticeable price increase attributed to inflation, I'm an avid Taco Bell fan. There's an undeniable satisfaction in indulging in a Crunchwrap Supreme whenever hunger strikes. Fusing a traditional Mexican taco with a generously sized flattened burrito creates a symphony of flavors that resonates perfectly with my taste buds. The mere thought of it sets my stomach on a journey of anticipation, as each bite combines the comforting essence of familiar ingredients in a novel and exciting way. Yo quiero Taco Bell.</p>
+        <p class="pet_p">Despite the noticeable price increase attributed to inflation, I'm an avid Taco Bell fan. There's an undeniable satisfaction in indulging in a Crunchwrap Supreme whenever hunger strikes. Fusing a traditional Mexican taco with a generously sized flattened burrito creates a symphony of flavors that resonates perfectly with my taste buds. The mere thought of it sets my stomach on a journey of anticipation, as each bite combines the comforting essence of familiar ingredients in a novel and exciting way. Yo quiero Taco Bell.</p>
 
         <h4 class="recipe_divider">Recipe Ingredients</h4>
         <ul>
@@ -113,7 +125,7 @@
 
     <section>
         <h3>Peanut Butter and Jelly Sandwich</h3>
-        <ul>
+        <ul class="pet_p">
             <li>Origin: United States</li>
             <li>Source: Alex Likens</li>
             <li>Category: Main Dish</li>
@@ -122,7 +134,7 @@
     
         <img class = recipe_image src="images/sandwich.jpeg" width = "400" alt="Sliced peanut butter and jelly sandwich">
 
-        <p>Peanut butter and jelly sandwiches are a childhood lunchbox staple enjoyed by many kids. The sandwich is the perfect blend of salty and sweet, and doesn't require refrigeration or heating to enjoy - making it the perfect lunchbox snack. There are many possible varieties if the chef changes the combinations of nut butters, jellies, and breads.</p>
+        <p class="pet_p">Peanut butter and jelly sandwiches are a childhood lunchbox staple enjoyed by many kids. The sandwich is the perfect blend of salty and sweet, and doesn't require refrigeration or heating to enjoy - making it the perfect lunchbox snack. There are many possible varieties if the chef changes the combinations of nut butters, jellies, and breads.</p>
 
         <h4 class="recipe_divider">Recipe Ingredients</h4>
         <ul>
@@ -144,7 +156,7 @@
 
     <section>
         <h3>Chicken Tikka Masala</h3>
-        <ul>
+        <ul class="pet_p">
             <li>Origin: India</li>
             <li>Source: <a href="https://tasty.co/recipe/homemade-chicken-tikka-masala">Tasty</a></li>
             <li>Category: Main Dish</li>
@@ -153,7 +165,7 @@
 
         <img class = recipe_image src="images/chicken_tikka_masala.jpeg" width="400" alt="Chicken Tikka Masala on white rice">
         
-        <p>Chicken Tikka Masala is a delicious dish to have for dinner. It has a nice mixture of savory and sweet flavors and is best served with Naan, rice, and vegetables.</p>
+        <p class="pet_p">Chicken Tikka Masala is a delicious dish to have for dinner. It has a nice mixture of savory and sweet flavors and is best served with Naan, rice, and vegetables.</p>
     
         <h4 class="recipe_divider">Recipe Ingredients</h4>
         <ul>
@@ -194,7 +206,26 @@
         </ol>
     </section>
     </main>
+
+    <script>
+        const f = document.getElementById('form');
+        const q = document.getElementById('query');
+        const google = 'https://www.google.com/search?q=site%3A+';
+        const site = 'https://mehousee.github.io/commonproject/';
+  
+        function submitted(event) {
+          event.preventDefault();
+          const url = google + site + '+' + q.value;
+          const win = window.open(url, '_blank');
+          win.focus();
+        }
+  
+        f.addEventListener('submit', submitted);
+    </script>
+
 </body>
 </html>
 
 <!--Common project starter code used with permission from Dr. van Lent: https://github.com/GodHook/starter_html-->
+
+<!--Resource utilized in implementing search bar: https://pagedart.com/blog/how-to-add-a-search-bar-in-html/-->
